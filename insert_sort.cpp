@@ -1,14 +1,13 @@
 #include <iostream>
 
+//升序排列
 void insert_sort(int a[], std::size_t n)
 {
-    std::size_t i = 0, j = 0;
-    int key = 0;
-    
-    for(j = 1; j < n; ++j)
+    for(int j = 1; j < n; ++j)
     {
-        key = a[j];
-        i = j - 1;
+        int key = a[j];
+        int i = j - 1;
+        
         while(i >= 0 && a[i] > key)
         {
             a[i+1] = a[i];
@@ -16,7 +15,27 @@ void insert_sort(int a[], std::size_t n)
         }
         a[i+1] = key;
     }
+}
+
+
+// 降序排列
+/*
+void insert_sort(int a[], std::size_t n)
+{
+    for(int j = 1; j < n; ++j)
+    {
+        int key = a[j];
+        int i = j - 1;
+        while(i >= 0 && key > a[i])
+        {
+            a[i+1] = a[i];
+            --i;
+        }
+        a[i+1] = key;
+    }
 }
+*/
+
 
 int main()
 {
